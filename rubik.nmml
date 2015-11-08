@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+	<app title="Rubik" file="Rubik" main="Main" package="com.vgt.src" version="1.0.0" company="VgT" />
+
+	<window width="500" height="500" fps="60" orientation="portrait" resizable="false" />
+
+	<set name="BUILD_DIR" value="bin" />
+
+	<classpath name="src" />
+
+	<!-- configuration flags -->
+	<set name="SWF_VERSION" value="11" />
+    <haxedef name="fullscreen" if="desktop" />
+
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+
+	<classpath name="C:\Archivos de programa\FlashDevelop\Library\HAXE\classes\" if="flash" />
+	<classpath name="C:\Program Files (x86)\FlashDevelop\Library\HAXE\classes\" if="flash" />
+
+	<icon name="assets/nme.svg" />
+
+</project>
