@@ -39,7 +39,7 @@ class SpacialEntity
         while( Vector3D.directions[colorFace] != null )
         {
             direction = Vector3D.directions[colorFace].clone();
-            faces.push( new EntityFace( canvas, direction,
+            faces.push( new EntityFace( this, canvas, direction,
                 ( direction.dot( position ) > 0 ) ? colorFace : 0, faceVertices[colorFace - 1] ) );
             colorFace++;
         }

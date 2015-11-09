@@ -1,6 +1,7 @@
 package core;
 
 import cube.CubeManager;
+import cube.CubeSolver;
 import cube.RubikCube;
 import openfl.display.Sprite;
 import openfl.display.TriangleCulling;
@@ -85,6 +86,8 @@ class Application
         m_canvas.addChild( m_console );
 
         m_cubeManager = new CubeManager( RubikCube.instance );
+        m_solver = new CubeSolver( RubikCube.instance );
+
         m_cubeManager.start();
     }
 
@@ -141,4 +144,5 @@ class Application
     private var m_canvas:Sprite;
     private var m_view:View3D;
     private var m_console:Console;
+    private var m_solver:CubeSolver;
 }

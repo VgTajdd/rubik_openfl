@@ -25,12 +25,12 @@ class CubeManager
             k++;
         }
 
-        while ( k > 0 )
-        {
-            k--;
-            _tempDataRotation = _queue[k];
-            _queue.push( new DataRotation( _tempDataRotation.face, false ) );
-        }
+        //while ( k > 0 )
+        //{
+            //k--;
+            //_tempDataRotation = _queue[k];
+            //_queue.push( new DataRotation( _tempDataRotation.face, false ) );
+        //}
     }
 
     public function start():Void

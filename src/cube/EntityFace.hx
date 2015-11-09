@@ -20,8 +20,11 @@ class EntityFace
     public var normal:Vector3D;
     public var relativeCenter:Vector3D;
     public var fVector:Vector<Float>;
-    public function new( parentCanvas:Sprite, vec3D:Vector3D, color:Int, _vertexArray:Array<Vector3D> )
+    public var parent:SpacialEntity;
+
+    public function new( parent:SpacialEntity, parentCanvas:Sprite, vec3D:Vector3D, color:Int, _vertexArray:Array<Vector3D> )
     {
+        this.parent = parent;
         canvas = new SpriteDepth();
         canvas.face = this;
         parentCanvas.addChild( canvas );
