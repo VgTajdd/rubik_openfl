@@ -45,6 +45,7 @@ class EntityFace
         {
             fVector.push( 0 );
         }
+        RubikCube.instance.addFaceToBuffer( color, this );
     }
 
     public function rotateX( angle:Float ):Void

@@ -9,6 +9,8 @@ import cube.RubikCube;
  */
 class CubeManager
 {
+    public var onEndInitialTransition:Void->Void;
+
     public function new( cube:RubikCube )
     {
         _cube = cube;
@@ -44,6 +46,13 @@ class CubeManager
         {
             _tempDataRotation = _queue.pop();
             _cube.rotateFace( _tempDataRotation.face, _tempDataRotation.clockwise );
+        }
+        else
+        {
+            if ( onEndInitialTransition != null )
+            {
+                onEndInitialTransition();
+            }
         }
     }
 

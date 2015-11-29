@@ -22,9 +22,20 @@ class CubeSolver
         var arrayFaces:Array<EntityFace> = findFaces( RubikCube.COLOR_WHITE );
     }
 
-    function findFaces( colorWhite:Int ):Array<EntityFace>
+    function findFaces( color:Int ):Array<EntityFace>
     {
         var faces:Array<EntityFace> = [];
+        faces = _cube.faces.get( color );
+        for ( face in faces )
+        {
+            switch( face.parent.type )
+            {
+                case SpacialEntity.TYPE_CORNER:
+                    trace( face.normal.toString() );
+                case SpacialEntity.TYPE_EDGE:
+                    trace( face.normal.toString() );
+            }
+        }
         return faces;
     }
 

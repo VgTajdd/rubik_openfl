@@ -12,10 +12,14 @@ class SpacialEntity
 {
     public static var SIZE:Int = 100;
 
+    public static var TYPE_CORNER:Int = 1;
+    public static var TYPE_EDGE:Int = 2;
+
     public var position:Vector3D;
     public var canvas:SpriteDepth;
     public var inRotation:Bool;
     public var faces:Array<EntityFace>;
+    public var type:Int;
 
     public function new( sCanvas:SpriteDepth, mCanvas:SpriteDepth, pos3D:Vector3D, faceVertices:Array<Array<Vector3D>> )
     {
@@ -30,6 +34,15 @@ class SpacialEntity
         position = Vector3D.create();
         position.copyValuesFrom( pos3D );
         Vector3D.dispose( pos3D );
+
+        if ( position.x == 0 || position.y == 0 || position.z == 0 )
+        {
+            type = TYPE_EDGE;
+        }
+        else
+        {
+            type = TYPE_CORNER;
+        }
 
         faces = new Array<EntityFace>();
 

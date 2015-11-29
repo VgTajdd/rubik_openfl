@@ -1,6 +1,9 @@
 package cube;
 
 import cube.CubeRenderer;
+import cube.EntityFace;
+import haxe.ds.IntMap;
+import haxe.ds.StringMap;
 import haxe.ds.Vector;
 import openfl.display.Sprite;
 import utils.ExponentialInterpolation;
@@ -25,6 +28,8 @@ class RubikCube
     public static inline var ST_STAND:Int = 2;
 
     public var elements:Array<SpacialEntity>;
+
+    public var faces:IntMap<Array<EntityFace>>;
 
     public static var instance:RubikCube;
 
@@ -136,6 +141,7 @@ class RubikCube
         }
 
         elements = new Array<SpacialEntity>();
+        faces = new IntMap<Array<EntityFace>>();
 
         if ( canvasToRender != null )
         {
@@ -202,7 +208,7 @@ class RubikCube
 
         _state = ST_ROTATION_FACE;
         _currentDirection = direction;
-        _interpolator = new ExponentialInterpolation( 0, angle, 200, -5 );
+        _interpolator = new ExponentialInterpolation( 0, angle, 50, -5 );
         _interpolator.onEndInterpolation = onEndInterpolation;
     }
 
@@ -268,6 +274,15 @@ class RubikCube
                 }
         }
         renderCube();
+    }
+
+    public function addFaceToBuffer( color:Int, entityFace:EntityFace ):Void
+    {
+        if ( !faces.exists( color ) )
+        {
+            faces.set( color, new Array<EntityFace>() );
+        }
+        faces.get( color ).push( entityFace );
     }
 
     private var _renderer:CubeRenderer;

@@ -87,7 +87,8 @@ class Application
 
         m_cubeManager = new CubeManager( RubikCube.instance );
         m_solver = new CubeSolver( RubikCube.instance );
-
+        m_cubeManager.onEndInitialTransition = m_solver.solve;
+        //m_solver.solve();
         m_cubeManager.start();
     }
 
