@@ -20,6 +20,15 @@ class CubeSolver
     {
         _state = ST_FIRST_CROSS;
         var arrayFaces:Array<EntityFace> = findFaces( RubikCube.COLOR_WHITE );
+        var face:EntityFace = null;
+        for ( fface in arrayFaces )
+        {
+            face = fface;
+            if ( face.parent.type == SpacialEntity.TYPE_EDGE )
+            {
+
+            }
+        }
     }
 
     function findFaces( color:Int ):Array<EntityFace>

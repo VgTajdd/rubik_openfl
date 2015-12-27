@@ -88,18 +88,19 @@ class Application
         m_cubeManager = new CubeManager( RubikCube.instance );
         m_solver = new CubeSolver( RubikCube.instance );
         m_cubeManager.onEndInitialTransition = m_solver.solve;
-        //m_solver.solve();
-        m_cubeManager.start();
+        m_cubeManager.unsort();
     }
 
     public function onKeyDown( e:KeyboardEvent ):Void
     {
         m_view.onKeyDown( e.keyCode );
+        m_cubeManager.onKeyDown( e.keyCode );
     }
 
     public function onKeyUp( e:KeyboardEvent ):Void
     {
         m_view.onKeyUp( e.keyCode );
+        m_cubeManager.onKeyUp( e.keyCode );
     }
 
     public static function setupLogs():Void

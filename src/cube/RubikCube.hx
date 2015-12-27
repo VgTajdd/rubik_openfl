@@ -185,12 +185,12 @@ class RubikCube
         _faceVerticesArray = null;
     }
 
-    public function rotateFace( direction:Int, clockwise:Bool = true ):Void
+    public function rotateFace( direction:Int, clockwise:Bool = true, time:Int = 50 ):Void
     {
-        startRotation( direction, clockwise? Math.PI / 2: -Math.PI / 2 );
+        startRotation( direction, clockwise? Math.PI / 2: -Math.PI / 2, time );
     }
 
-    private function startRotation( direction:Int, angle:Float )
+    private function startRotation( direction:Int, angle:Float, time:Int = 50 ):Void
     {
         if ( Vector3D.directions[direction] == null )
         {
@@ -208,7 +208,7 @@ class RubikCube
 
         _state = ST_ROTATION_FACE;
         _currentDirection = direction;
-        _interpolator = new ExponentialInterpolation( 0, angle, 50, -5 );
+        _interpolator = new ExponentialInterpolation( 0, angle, time, -5 );
         _interpolator.onEndInterpolation = onEndInterpolation;
     }
 
