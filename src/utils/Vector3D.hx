@@ -52,10 +52,10 @@ class Vector3D
         //trace( "New Vector3D created - [" + instancesCreated + " instances]" );
     }
 
-	public function toString():String
-	{
-		return "[X: " + x + " - Y: " + y + " - Z: " + z + "]";
-	}
+    public function toString():String
+    {
+        return "[X: " + x + " - Y: " + y + " - Z: " + z + "]";
+    }
 
     public static inline function create( x:Float = 0, y:Float = 0, z:Float = 0 ):Vector3D
     {

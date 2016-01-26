@@ -27,7 +27,17 @@ class CubeSolver
             if ( face.parent.type == SpacialEntity.TYPE_EDGE )
             {
 
+                for ( f in face.parent.faces )
+                {
+                    if ( f.color == 0 ) continue;
+                    if ( f.color == RubikCube.COLOR_WHITE ) continue;
+                    if ( f.normal  )
+                }
             }
+            //else if ( face.parent.type == SpacialEntity.TYPE_CORNER )
+            //{
+//
+            //}
         }
     }
 
