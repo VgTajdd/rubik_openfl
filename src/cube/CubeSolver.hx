@@ -1,4 +1,5 @@
 package cube;
+import utils.Vector3D;
 
 /**
  * ...
@@ -26,18 +27,31 @@ class CubeSolver
             face = fface;
             if ( face.parent.type == SpacialEntity.TYPE_EDGE )
             {
+                // Find edge elements with a white face in the white rubik face.
+                for ( face.normal.dot( Vector3D.directions[RubikCube.COLOR_WHITE] ) > 0 )
+                {
+                    if ( f.color == 0 ) continue;
+                    if ( f.color == RubikCube.COLOR_WHITE ) continue;
+                    if ( f.normal.dot( Vector3D.directions[RubikCube.getColorId( f.color )] ) > 0 )
+                    {
+                        trace( f.color );
+                    }
+                    else
+                    {
 
+                    }
+                }
+                // Find edge elements that have the same altenative color that de rubik face color.
                 for ( f in face.parent.faces )
                 {
                     if ( f.color == 0 ) continue;
                     if ( f.color == RubikCube.COLOR_WHITE ) continue;
-                    if ( f.normal  )
+                    if ( f.normal.dot( Vector3D.directions[RubikCube.getColorId( f.color )] ) > 0 )
+                    {
+                        trace( f.color );
+                    }
                 }
             }
-            //else if ( face.parent.type == SpacialEntity.TYPE_CORNER )
-            //{
-//
-            //}
         }
     }
 

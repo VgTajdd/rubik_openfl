@@ -63,6 +63,26 @@ class RubikCube
         return 0;
     }
 
+    static public function getColorId( value:Int ):Int
+    {
+        switch( value )
+        {
+            case 0x0000ff:
+                return COLOR_BLUE;
+            case 0x00ff00:
+                return COLOR_GREEN;
+            case 0xff0000:
+                return COLOR_RED;
+            case 0xffff00:
+                return COLOR_YELLOW;
+            case 0xff7700:
+                return COLOR_ORANGE;
+            case 0xffffff:
+                return COLOR_WHITE;
+        }
+        return 0;
+    }
+
     public function new( canvasToRender:SpriteDepth = null )
     {
         instance = this;
