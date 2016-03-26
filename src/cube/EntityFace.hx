@@ -31,7 +31,7 @@ class EntityFace
         normal = Vector3D.create();
         relativeCenter = Vector3D.create();
         normal.copyValuesFrom( vec3D );
-        this.color = RubikCube.getColor( color );
+        this.color = RubikCube.getColorRGB( color );
         relativeVertexArray = new Array<Vector3D>();
         for ( _vertex in _vertexArray )
         {

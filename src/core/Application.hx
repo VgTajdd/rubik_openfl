@@ -95,6 +95,7 @@ class Application
     {
         m_view.onKeyDown( e.keyCode );
         m_cubeManager.onKeyDown( e.keyCode );
+        m_solver.onKeyDown( e.keyCode );
     }
 
     public function onKeyUp( e:KeyboardEvent ):Void

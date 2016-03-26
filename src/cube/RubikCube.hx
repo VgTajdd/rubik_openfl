@@ -43,7 +43,7 @@ class RubikCube
         new RubikCube( canvasToRender );
     }
 
-    static public function getColor( value:Float ):Int
+    static public function getColorRGB( value:Float ):Int
     {
         switch( value )
         {
@@ -81,6 +81,26 @@ class RubikCube
                 return COLOR_WHITE;
         }
         return 0;
+    }
+
+    static public function getColorName( valueRGB:Int ):String
+    {
+        switch( valueRGB )
+        {
+            case 0x0000ff:
+                return "Blue";
+            case 0x00ff00:
+                return "Green";
+            case 0xff0000:
+                return "Red";
+            case 0xffff00:
+                return "Yellow";
+            case 0xff7700:
+                return "Orange";
+            case 0xffffff:
+                return "White";
+        }
+        return "Black";
     }
 
     public function new( canvasToRender:SpriteDepth = null )
