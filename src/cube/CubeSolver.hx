@@ -55,9 +55,9 @@ class CubeSolver
                 if ( isInRubikFace( face, RubikCube.COLOR_WHITE ) )
                 {
                     var oFaces:Array<EntityFace> = findCoFaces( face );
+                    var numFacesInRightPlace:Int = 0;
                     for ( oFace in oFaces )
                     {
-                        var numFacesInRightPlace:Int = 0;
                         trace( RubikCube.getColorName( oFace.color ) );
                         // This element is in the right face.
                         if ( isInItsRubikFace( oFace ) )
