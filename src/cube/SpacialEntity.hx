@@ -12,8 +12,8 @@ class SpacialEntity
 {
     public static var SIZE:Int = 100;
 
-    public static var TYPE_CORNER:Int = 1;
-    public static var TYPE_EDGE:Int = 2;
+    public static inline var TYPE_CORNER:Int = 1;
+    public static inline var TYPE_EDGE:Int = 2;
 
     public var position:Vector3D;
     public var canvas:SpriteDepth;

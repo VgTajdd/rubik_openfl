@@ -138,7 +138,7 @@ class Application
 #elseif js
         canvasB.graphics.drawTriangles( vVertices, vIndices );
 #else
-        canvasB.graphics.drawTriangles( vVertices, vIndices, vUVs, TriangleCulling.POSITIVE, vColors );
+        canvasB.graphics.drawTriangles( vVertices, vIndices, vUVs, TriangleCulling.POSITIVE/*, vColors*/ );
 #end
         canvasB.graphics.endFill();
     }

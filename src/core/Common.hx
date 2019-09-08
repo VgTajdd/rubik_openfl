@@ -231,7 +231,7 @@ class Common
 #elseif js
         canvas.graphics.drawTriangles( vVertices, Common.vIndices );
 #else
-        canvas.graphics.drawTriangles( vVertices, Common.vIndices, Common.vUVs, TriangleCulling.NONE, Common.vColors );
+        canvas.graphics.drawTriangles( vVertices, Common.vIndices, Common.vUVs, TriangleCulling.NONE/*, Common.vColors*/ );
 #end
 
 #else
